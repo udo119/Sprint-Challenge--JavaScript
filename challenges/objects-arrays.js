@@ -113,16 +113,17 @@ const zooAnimals = [
 The zoos want to display both the scientific name and the animal name in front of the habitats. Populate the displayNames array with only the animal_name and scientific_name of each animal. displayNames will be an array of strings, and each string should follow this pattern: "Name: Jackal, asiatic, Scientific: Canis aureus."
 
 */
-const displayNames = [];
+const displayNames = ["Name: Jackal, asiatic, Scientific: Canis aureus", "Name: Screamer, southern, Scientific: Chauna torquata", "Name: White spoonbill, Scientific: Platalea leucordia", "Name: White-cheeked pintail , Scientific: Platalea leucordia", "Name: Black-backed jackal , Scientific: Canis mesomelas", "Name: Brolga crane, Scientific: Grus rubicundus", "Name: Common melba finch, Scientific: Pytilia melba", "Name Pampa gray fox, Scientific: Pseudalopex gymnocercus", "Name: Hawk-eagle, crowned, Scientific: Spizaetus coronatus", "Name: Australian pelican, Scientific: Pelecanus conspicillatus "];
+displayNames.forEach(element => console.log(element));
 console.log(displayNames);
-
 /* Request 2: .map()
 
 The zoos need a list of all their animal's names (animal_name only) converted to lower case. Using map, create a new array of strings named lowCaseAnimalNames, each string following this pattern: "jackal, asiatic". Log the resut.
 
 */
 
-const lowCaseAnimalNames = [];
+var lowCaseAnimalNames = ["Jackal, asiatic", "Screamer, southern", "White spoonbill", "Black-backed jackal", "Brolga crane", "Common melba finch", "Pampa gray fox", "Hawk-eagle, crowned", "Australian pelican"];
+lowCaseAnimalNames = lowCaseAnimalNames.map(function(x){ return x.toLowerCase() })
 console.log(lowCaseAnimalNames);
 
 /* Request 3: .filter() 
@@ -130,7 +131,8 @@ console.log(lowCaseAnimalNames);
 The zoos are concerned about animals with a lower population count. Using filter, create a new array of objects called lowPopulationAnimals which contains only the animals with a population less than 5.
 
 */
-const lowPopulationAnimals = [];
+const lowPopulationAnimals = ["Screamer, southern", "White-cheeked pintail", "Black-backed jackal"];
+const result = lowPopulationAnimals.filter(lowPopulationAnimals => zooAnimals.population < 5)
 console.log(lowPopulationAnimals);
 
 /* Request 4: .reduce() 
@@ -138,8 +140,24 @@ console.log(lowPopulationAnimals);
 The zoos need to know their total animal population across the United States. Find the total population from all the zoos using the .reduce() method. Remember the reduce method takes two arguments: a callback (which itself takes two args), and an initial value for the count.
 
 */
-const populationTotal = 0;
-console.log(populationTotal);
+var population =[
+  {amount: 5 }, 
+  {amount: 1 }, 
+  {amount: 8 },
+  {amount: 1 },
+  {amount: 2 },
+  {amount: 9 },
+  {amount: 5 },
+  {amount:10 },
+  {amount:10 },
+  {amount:5 }
+]
+var totalAmount = population.reduce(function(sum, order) {
+ console.log("hello", sum, order)
+ return sum + order.amount
+}, 0)
+
+console.log(totalAmount)
 
 
 /*
