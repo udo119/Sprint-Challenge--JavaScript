@@ -83,12 +83,13 @@ The resulting contact information strings should have a space between the first 
 
 Log the result of your new array. */
 const contactInfo = ["Cynde ctorry0@macromedia.com",  "Saundra swhal1@state.gov", "Lambert lparham2@techcrunch.com", "Modestine mdolder3@symantec.com", "Chick camorts4@google.com.au", "Jakob jharken5@spiegel.de", "Robbi rbrister6@redcross.org", "Colline cbrosh7@alibaba.com", "Michail mrome8@shinystat.com", "Hube hlethbrig9@foxnews.com"];
-contactInfo.sort();
+return `(${first_name}, ${email})`;
 console.log(contactInfo);
 
 /* Request 3: Find out how many universities have the string "Uni" included in their name. Create a new array called unisWithUni that contains them all. This will be an array of objects. Log the result. */
-const unisWithUni = ["International Medical & Technological University", "Salem University", "Coastal Carolina University", "Universidad Católica de Ávila", "Universitat Rovira I Virgili Tarragona"];
-console.log(unisWithUni);
+const unisWithUni = ["Missouri Southern State College",  "The School of the Art Institute of Chicago", "Marian College", "International Medical & Technological University", "Sultan Salahuddin Abdul Aziz Shah Polytechnic", "Fachhochschule Rosenheim, Hochschule für Technik und Wirtschaft", "Salem University", "Coastal Carolina University", "Universidad Católica de Ávila", "Universitat Rovira I Virgili Tarragona"]
+const unisWithUni=  unisWithUni.slice(3, 6, 7, 8, 9)
+console.log(unisWithUni1);
 
 
 // ==== ADVANCED Array Methods ====
