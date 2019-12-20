@@ -87,9 +87,16 @@ return `(${first_name}, ${email})`;
 console.log(contactInfo);
 
 /* Request 3: Find out how many universities have the string "Uni" included in their name. Create a new array called unisWithUni that contains them all. This will be an array of objects. Log the result. */
-const unisWithUni = ["Missouri Southern State College",  "The School of the Art Institute of Chicago", "Marian College", "International Medical & Technological University", "Sultan Salahuddin Abdul Aziz Shah Polytechnic", "Fachhochschule Rosenheim, Hochschule für Technik und Wirtschaft", "Salem University", "Coastal Carolina University", "Universidad Católica de Ávila", "Universitat Rovira I Virgili Tarragona"]
-const unisWithUni=  unisWithUni.slice(3, 6, 7, 8, 9)
-console.log(unisWithUni1);
+
+const unisWithUni = [];
+
+for (i=0 ;i<graduates.length; i++) {
+  if (graduates[i]["university"].includes("Uni") == true){
+    unisWithUni.push(graduates[i]["university"]);
+  }
+}
+
+console.log(unisWithUni);
 
 
 // ==== ADVANCED Array Methods ====
@@ -114,17 +121,19 @@ const zooAnimals = [
 The zoos want to display both the scientific name and the animal name in front of the habitats. Populate the displayNames array with only the animal_name and scientific_name of each animal. displayNames will be an array of strings, and each string should follow this pattern: "Name: Jackal, asiatic, Scientific: Canis aureus."
 
 */
-const displayNames = ["Name: Jackal, asiatic, Scientific: Canis aureus", "Name: Screamer, southern, Scientific: Chauna torquata", "Name: White spoonbill, Scientific: Platalea leucordia", "Name: White-cheeked pintail , Scientific: Platalea leucordia", "Name: Black-backed jackal , Scientific: Canis mesomelas", "Name: Brolga crane, Scientific: Grus rubicundus", "Name: Common melba finch, Scientific: Pytilia melba", "Name Pampa gray fox, Scientific: Pseudalopex gymnocercus", "Name: Hawk-eagle, crowned, Scientific: Spizaetus coronatus", "Name: Australian pelican, Scientific: Pelecanus conspicillatus "];
-displayNames.forEach(element => console.log(element));
-console.log(displayNames);
+const displayNames = [];
+
+zooAnimals.forEach(function(name){
+  displayNames.push(`Name: ${name.animal_name} Scientific: ${name.scientific_name}`);
+});
 /* Request 2: .map()
 
 The zoos need a list of all their animal's names (animal_name only) converted to lower case. Using map, create a new array of strings named lowCaseAnimalNames, each string following this pattern: "jackal, asiatic". Log the resut.
 
 */
 
-var lowCaseAnimalNames = ["Jackal, asiatic", "Screamer, southern", "White spoonbill", "Black-backed jackal", "Brolga crane", "Common melba finch", "Pampa gray fox", "Hawk-eagle, crowned", "Australian pelican"];
-lowCaseAnimalNames = lowCaseAnimalNames.map(function(x){ return x.toLowerCase() })
+const lowCaseAnimalNames = zooAnimals.map (name => name.animal_name.toLowerCase());
+
 console.log(lowCaseAnimalNames);
 
 /* Request 3: .filter() 
@@ -132,8 +141,8 @@ console.log(lowCaseAnimalNames);
 The zoos are concerned about animals with a lower population count. Using filter, create a new array of objects called lowPopulationAnimals which contains only the animals with a population less than 5.
 
 */
-const lowPopulationAnimals = ["Screamer, southern", "White-cheeked pintail", "Black-backed jackal"];
-const result = lowPopulationAnimals.filter(lowPopulationAnimals => zooAnimals.population < 5)
+const lowPopulationAnimals = zooAnimals.filter (name => name.population < 5);
+
 console.log(lowPopulationAnimals);
 
 /* Request 4: .reduce() 
