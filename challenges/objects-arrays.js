@@ -71,9 +71,15 @@ const graduates = [
 /* Request 1: Create a new array called universities that contains all the universities in the graduates array. This will be an array of strings.
 
 Once you have the new array created, sort the universities alphabetically and log the result. */
-const universities = ["Missouri Southern State College",  "The School of the Art Institute of Chicago", "Marian College", "International Medical & Technological University", "Sultan Salahuddin Abdul Aziz Shah Polytechnic", "Fachhochschule Rosenheim, Hochschule für Technik und Wirtschaft", "Salem University", "Coastal Carolina University", "Universidad Católica de Ávila", "Universitat Rovira I Virgili Tarragona"]
-  universities.sort();
-  console.log(universities);
+const universities = [];
+
+graduates.forEach(function(school){
+  universities.push(school.university);
+});
+
+universities.sort();
+
+console.log(universities);
 
 
 /* Request 2: Create a new array called contactInfo that contains both first name and email of each student. This will be an array of strings.
@@ -82,8 +88,12 @@ The resulting contact information strings should have a space between the first 
 "Josh josh@example.com"
 
 Log the result of your new array. */
-const contactInfo = ["Cynde ctorry0@macromedia.com",  "Saundra swhal1@state.gov", "Lambert lparham2@techcrunch.com", "Modestine mdolder3@symantec.com", "Chick camorts4@google.com.au", "Jakob jharken5@spiegel.de", "Robbi rbrister6@redcross.org", "Colline cbrosh7@alibaba.com", "Michail mrome8@shinystat.com", "Hube hlethbrig9@foxnews.com"];
-return `(${first_name}, ${email})`;
+const contactInfo = [];
+
+graduates.forEach (grads =>{
+  contactInfo.push(`${grads.first_name} ${grads.email}`)
+});
+
 console.log(contactInfo);
 
 /* Request 3: Find out how many universities have the string "Uni" included in their name. Create a new array called unisWithUni that contains them all. This will be an array of objects. Log the result. */
