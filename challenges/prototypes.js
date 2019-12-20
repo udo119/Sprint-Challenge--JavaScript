@@ -17,7 +17,7 @@ function cuboidMaker(cuboids){
   Formula for cuboid volume: length * width * height
 */
 cuboidMaker.prototype.volume = function(){
-  return this.length * this.width * this.height
+  return `length * .width * height`;
 }
 
 /* == Step 3: Surface Area Method ==
@@ -26,7 +26,7 @@ cuboidMaker.prototype.volume = function(){
   Formula for cuboid surface area of a cube: 2 * (length * width + length * height + width * height)
 */
 cuboidMaker.prototype.surfaceArea = function(){
-  return (2 * (length * width + length * height + width * height));
+  return `2 * (length * width + length * height + width * height)`;
 }
 
 /* == Step 4: Create a new object that uses CuboidMaker ==
